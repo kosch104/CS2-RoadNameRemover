@@ -9,12 +9,12 @@
         {
             get;
             set;
-        } = true;
+        } = false;
 
         public bool ShowRoadNames
         {
             get;
             set;
-        } = true;
+        } = false;
     }
 }
