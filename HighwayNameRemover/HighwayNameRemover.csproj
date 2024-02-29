@@ -21,6 +21,10 @@
 	</PropertyGroup>
 	
 	<ItemGroup>
+		<Reference Include="Gooee">
+			<HintPath>$(Cities2_Game_Location)\BepInEx\plugins\Gooee\Gooee.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
 		<Reference Include="Colossal.AssetPipeline">
 			<HintPath>$(Cities2_Game_Location)\Cities2_Data\Managed\Colossal.AssetPipeline.dll</HintPath>
 			<Private>False</Private>
@@ -408,6 +412,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<EmbeddedResource Include="Resources\lang\en-US.yml" />
+		<EmbeddedResource Include="Resources\settings.xml" />
+		<EmbeddedResource Include="Resources\ui.js" />
+		<EmbeddedResource Include="embedded\Localization\Localization.jsonc" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
 		<PackageReference Include="HarmonyX" Version="2.*" />
 	</ItemGroup>
@@ -428,10 +439,6 @@
 		<None Update="DefaultSettings.json">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
-	</ItemGroup>
-
-	<ItemGroup>
-		<EmbeddedResource Include="embedded\Localization\Localization.jsonc"></EmbeddedResource>
 	</ItemGroup>
 
 

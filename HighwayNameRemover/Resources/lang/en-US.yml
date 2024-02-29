@@ -1,0 +1,10 @@
+lang:
+ HighwayNameRemover.HighwayNameRemoverSettings.ModName: Highway Name Remover
+ Options.SECTION[HighwayNameRemover.HighwayNameRemoverSettings]: Highway Name Remover
+ Options.GROUP[HighwayNameRemover.HighwayNameRemoverSettings.Toggles]: Highway Name Remover
+ 
+ Options.OPTION[HighwayNameRemover.HighwayNameRemoverSettings.HighwayNameRemoverSettings.ShowHighwayNames]: Show Highway Names
+ Options.OPTION_DESCRIPTION[HighwayNameRemover.HighwayNameRemoverSettings.HighwayNameRemoverSettings.ShowHighwayNames]: When checked, highway names will be shown. This is the vanilla behavior.
+
+ Options.OPTION[HighwayNameRemover.HighwayNameRemoverSettings.HighwayNameRemoverSettings.ShowRoadNames]: Show Road Names
+ Options.OPTION_DESCRIPTION[HighwayNameRemover.HighwayNameRemoverSettings.HighwayNameRemoverSettings.ShowRoadNames]: When checked, street, alley and damn names will be shown. This is the vanilla behavior.
