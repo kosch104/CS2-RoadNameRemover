@@ -64,7 +64,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<EmbeddedResource Include="embedded\Localization\Localization.jsonc"></EmbeddedResource>
+		<EmbeddedResource Include="embedded\Localization\*"></EmbeddedResource>
 	</ItemGroup>
 
 

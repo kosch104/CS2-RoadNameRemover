@@ -4,6 +4,7 @@ using System.IO;
 using System.Reflection;
 using Colossal.IO.AssetDatabase;
 using Colossal.Json;
+using UnityEngine;
 
 namespace HighwayNameRemover
 {
@@ -47,17 +48,40 @@ namespace HighwayNameRemover
 
 		private static void LoadLocalization()
 		{
-			//var localizationFile = Assembly.GetExecutingAssembly().GetManifestResourceStream("HighwayNameRemover.embedded.Localization.Localization.jsonc");
-			var localizationFile = Assembly.GetExecutingAssembly().GetManifestResourceStream($"{Assembly.GetExecutingAssembly().GetName().Name}.embedded.Localization.Localization.jsonc");
-			localization = Decoder.Decode(new StreamReader(localizationFile).ReadToEnd()).Make<LocalizationJS>().Localization;
-		}
+			var assembly = Assembly.GetExecutingAssembly();
+			var resourceNames = assembly.GetManifestResourceNames();
 
+			Dictionary<string, Dictionary<string, string>> dictionary = new();
+			foreach (var resourceName in resourceNames)
+			{
+				if (resourceName.EndsWith(".json") && resourceName.Contains(".embedded.Localization."))
+				{
+					using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+					{
+						using (StreamReader reader = new StreamReader(stream))
+						{
+							string result = reader.ReadToEnd();
+							LocalizationLocaleJS loc = Decoder.Decode(result).Make<LocalizationLocaleJS>();
+							// Get the locale from the filename
+							var locale = resourceName.Split(".embedded.Localization.")[1].Split(".json")[0];
+							dictionary.Add(locale, loc.Localization);
+						}
+					}
+				}
+			}
+			localization = dictionary;
+		}
 	}
 
 	[Serializable]
-	public class LocalizationJS
+	public class LocalizationLocaleJS
 	{	
-		public Dictionary<string, Dictionary<string, string>> Localization = [];
+		public Dictionary<string, string> Localization;
 
+	}
+
+	public class LocalizationJS
+	{
+		public Dictionary<string, Dictionary<string, string>> Localization = [];
 	}
 }
