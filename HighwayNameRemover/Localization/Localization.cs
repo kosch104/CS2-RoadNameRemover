@@ -11,15 +11,17 @@ namespace HighwayNameRemover
 	{
 		internal static Dictionary<string, Dictionary<string, string>> localization;
 
-		internal static void AddCustomLocal(LocaleAsset localeAsset) { //Dictionary<string, string>
-
+		internal static void AddCustomLocal(LocaleAsset localeAsset)
+		{
 			if(localization is null) LoadLocalization();
 
 			string loc = localeAsset.localeId;
 
-			if(!localization.ContainsKey(loc)) loc = "en-US";
+			if(!localization.ContainsKey(loc)) // Fallback language
+				loc = "en-US";
 
-            foreach(string key in localization[loc].Keys) {
+            foreach(string key in localization[loc].Keys)
+            {
                 if(localeAsset.data.entries.ContainsKey(key))
 	                localeAsset.data.entries[key] = localization[loc][key];
                 else

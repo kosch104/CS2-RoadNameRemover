@@ -3,6 +3,7 @@
 	{
 		"de-DE":
 		{
+			"Assets.STREET_NAME:0": "         ",
 			"Assets.STREET_NAME:1": "         ",
 			"Assets.STREET_NAME:2": "         ",
 			"Assets.STREET_NAME:3": "         ",
@@ -113,6 +114,7 @@
 			"Assets.STREET_NAME:108": "         ",
 			"Assets.STREET_NAME:109": "         ",
 
+			"Assets.HIGHWAY_NAME:0": "         ",
 			"Assets.HIGHWAY_NAME:1": "         ",
 			"Assets.HIGHWAY_NAME:2": "         ",
 			"Assets.HIGHWAY_NAME:3": "         ",
@@ -6526,6 +6528,7 @@
 			"Assets.BRIDGE_NAME:108": "         ",
 			"Assets.BRIDGE_NAME:109": "         ",
 
+			"Assets.DAM_NAME:0": "         ",
 			"Assets.DAM_NAME:1": "         ",
 			"Assets.DAM_NAME:2": "         ",
 			"Assets.DAM_NAME:3": "         ",
