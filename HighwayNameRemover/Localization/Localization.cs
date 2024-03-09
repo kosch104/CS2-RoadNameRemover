@@ -45,24 +45,26 @@ namespace HighwayNameRemover
                 }
             }
 
+            List<string> typesToRemove = new List<string>();
+			var cfg = HighwayNameRemoverController._config;
+			if (cfg.HideStreetNames)
+				typesToRemove.Add("Assets.STREET_NAME:");
+			if (cfg.HideHighwayNames)
+				typesToRemove.Add("Assets.HIGHWAY_NAME:");
+			if (cfg.HideAlleyNames)
+				typesToRemove.Add("Assets.ALLEY_NAME:");
+			if (cfg.HideBridgeNames)
+				typesToRemove.Add("Assets.BRIDGE_NAME:");
+			if (cfg.HideDamNames)
+				typesToRemove.Add("Assets.DAM_NAME:");
+
+
             List<string> keys = new List<string>();
             foreach(string key in localeAsset.data.entries.Keys)
 			{
-				if (HighwayNameRemoverController._config.HideHighwayNames)
+				if (Array.Exists(typesToRemove.ToArray(), element => key.Contains(element)))
 				{
-					if (key.Contains("Assets.HIGHWAY_NAME:"))
-					{
-						keys.Add(key);
-					}
-				}
-
-				if (HighwayNameRemoverController._config.HideStreetNames)
-				{
-					string[] names = new string[] { "Assets.STREET_NAME:", "Assets.ALLEY_NAME:", "Assets.BRIDGE_NAME:", "Assets.DAM_NAME" };
-					if (Array.Exists(names, element => key.Contains(element)))
-					{
-						keys.Add(key);
-					}
+					keys.Add(key);
 				}
 			}
 
