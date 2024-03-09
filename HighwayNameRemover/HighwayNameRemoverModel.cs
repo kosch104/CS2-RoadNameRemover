@@ -4,13 +4,13 @@ namespace HighwayNameRemover;
 
 public class HighwayNameRemoverModel : Model
 {
-    public bool ShowHighwayNames
+    public bool HideHighwayNames
     {
         get;
         set;
     } = true;
 
-    public bool ShowRoadNames
+    public bool HideRoadNames
     {
         get;
         set;

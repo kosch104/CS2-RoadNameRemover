@@ -44,6 +44,39 @@ namespace HighwayNameRemover
 	                else localeAsset.data.indexCounts.Add(parts[0], n);
                 }
             }
+
+            if (HighwayNameRemoverController._modSettings is null)
+	            return;
+
+            Debug.Log("Hide Highway Names is " + HighwayNameRemoverController._modSettings.HideHighwayNames);
+            Debug.Log("Hide Road Names is " + HighwayNameRemoverController._modSettings.HideRoadNames);
+            List<string> keys = new List<string>();
+            foreach(string key in localeAsset.data.entries.Keys)
+			{
+				if (HighwayNameRemoverController._modSettings.HideHighwayNames)
+				{
+					if (key.Contains("Assets.HIGHWAY_NAME:"))
+					{
+						//localeAsset.data.entries[key] = "         ";
+						keys.Add(key);
+					}
+				}
+
+				if (HighwayNameRemoverController._modSettings.HideRoadNames)
+				{
+					string[] names = new string[] { "Assets.STREET_NAME:", "Assets.ALLEY_NAME:", "Assets.BRIDGE_NAME:", "Assets.DAM_NAME" };
+					if (Array.Exists(names, element => key.Contains(element)))
+					{
+						//localeAsset.data.entries[key] = "         ";
+						keys.Add(key);
+					}
+				}
+			}
+
+			foreach (string key in keys)
+			{
+				localeAsset.data.entries[key] = "         ";
+			}
 		}
 
 		private static void LoadLocalization()

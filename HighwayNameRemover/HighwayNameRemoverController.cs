@@ -1,20 +1,16 @@
 ﻿using Colossal.Serialization.Entities;
 using Game;
 using Gooee.Plugins;
-using HighwayNameRemover.Configuration;
 
 namespace HighwayNameRemover;
 
 public class HighwayNameRemoverController : Controller<HighwayNameRemoverModel>
 {
-    private HighwayNameRemoverSettings _modSettings;
-    public static readonly HighwayNameRemoverConfig _config = ConfigBase.Load<HighwayNameRemoverConfig>( );
+    public static HighwayNameRemoverSettings _modSettings;
 
     public override HighwayNameRemoverModel Configure()
     {
         var model = new HighwayNameRemoverModel( );
-        model.ShowHighwayNames = _config.ShowHighwayNames;
-        model.ShowRoadNames = _config.ShowRoadNames;
         return new HighwayNameRemoverModel();
     }
 
@@ -38,15 +34,15 @@ public class HighwayNameRemoverController : Controller<HighwayNameRemoverModel>
         if ( Settings == null )
             return;
 
-        if ( _modSettings.ShowHighwayNames != Model.ShowHighwayNames )
+        if ( _modSettings.HideHighwayNames != Model.HideHighwayNames )
         {
-            Model.ShowHighwayNames = _modSettings.ShowHighwayNames;
+            Model.HideHighwayNames = _modSettings.HideHighwayNames;
             TriggerUpdate( );
         }
 
-        if ( _modSettings.ShowRoadNames != Model.ShowRoadNames )
+        if ( _modSettings.HideRoadNames != Model.HideRoadNames )
         {
-            Model.ShowRoadNames = _modSettings.ShowRoadNames;
+            Model.HideRoadNames = _modSettings.HideRoadNames;
             TriggerUpdate( );
         }
 

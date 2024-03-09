@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <settings>
     <group title="Toggles">
-        <field title="ShowHighwayNames_Desc">
-            <checkbox isChecked="ShowHighwayNames" />
+        <field title="HideHighwayNames_Desc">
+            <checkbox isChecked="HideHighwayNames" />
         </field>
-        <field title="ShowRoadNames_Desc">
-            <checkbox isChecked="ShowRoadNames" />
+        <field title="HideRoadNames_Desc">
+            <checkbox isChecked="HideRoadNames" />
         </field>
     </group>
 </settings>

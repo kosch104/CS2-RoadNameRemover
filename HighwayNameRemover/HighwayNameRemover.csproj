@@ -50,7 +50,6 @@
 		<EmbeddedResource Include="Resources\lang\en-US.yml" />
 		<EmbeddedResource Include="Resources\settings.xml" />
 		<EmbeddedResource Include="Resources\ui.js" />
-		<EmbeddedResource Include="embedded\Localization\Localization.jsonc" />
 	</ItemGroup>
 
 

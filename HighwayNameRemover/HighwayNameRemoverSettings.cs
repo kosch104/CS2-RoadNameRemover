@@ -6,14 +6,14 @@ namespace HighwayNameRemover;
 public class HighwayNameRemoverSettings : GooeeSettings
 {
     [SettingsUISection("Toggles")]
-    public bool ShowHighwayNames
+    public bool HideHighwayNames
     {
         get;
         set;
     } = true;
 
     [SettingsUISection("Toggles")]
-    public bool ShowRoadNames
+    public bool HideRoadNames
     {
         get;
         set;
@@ -21,8 +21,8 @@ public class HighwayNameRemoverSettings : GooeeSettings
 
     public override void SetDefaults( )
     {
-        ShowHighwayNames = true;
-        ShowRoadNames = true;
+        HideHighwayNames = true;
+        HideRoadNames = false;
     }
 
     protected override string UIResource => "HighwayNameRemover.Resources.settings.xml";
