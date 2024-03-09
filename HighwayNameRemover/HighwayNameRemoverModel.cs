@@ -10,7 +10,25 @@ public class HighwayNameRemoverModel : Model
         set;
     } = true;
 
-    public bool HideRoadNames
+    public bool HideStreetNames
+    {
+        get;
+        set;
+    } = true;
+
+    public bool HideAlleyNames
+    {
+        get;
+        set;
+    } = true;
+
+    public bool HideBridgeNames
+    {
+        get;
+        set;
+    } = true;
+
+    public bool HideDamNames
     {
         get;
         set;

@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <settings>
     <group title="Toggles">
+        <field title="HideStreetNames_Desc">
+            <checkbox isChecked="HideStreetNames" />
+        </field>
         <field title="HideHighwayNames_Desc">
             <checkbox isChecked="HideHighwayNames" />
         </field>
-        <field title="HideRoadNames_Desc">
-            <checkbox isChecked="HideRoadNames" />
+        <field title="HideAlleyNames_Desc">
+            <checkbox isChecked="HideAlleyNames" />
+        </field>
+        <field title="HideBridgeNames_Desc">
+            <checkbox isChecked="HideBridgeNames" />
+        </field>
+        <field title="HideDamNames_Desc">
+            <checkbox isChecked="HideDamNames" />
         </field>
     </group>
 </settings>

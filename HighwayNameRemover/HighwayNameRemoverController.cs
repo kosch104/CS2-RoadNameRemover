@@ -15,7 +15,10 @@ public class HighwayNameRemoverController : Controller<HighwayNameRemoverModel>
     {
         _model = new HighwayNameRemoverModel( );
         _model.HideHighwayNames = _config.HideHighwayNames;
-        _model.HideRoadNames = _config.HideRoadNames;
+        _model.HideStreetNames = _config.HideStreetNames;
+        _model.HideAlleyNames = _config.HideAlleyNames;
+        _model.HideBridgeNames = _config.HideBridgeNames;
+        _model.HideDamNames = _config.HideDamNames;
         return _model;
     }
 
@@ -45,9 +48,27 @@ public class HighwayNameRemoverController : Controller<HighwayNameRemoverModel>
             TriggerUpdate( );
         }
 
-        if ( _modSettings.HideRoadNames != Model.HideRoadNames )
+        if ( _modSettings.HideStreetNames != Model.HideStreetNames )
         {
-            Model.HideRoadNames = _modSettings.HideRoadNames;
+            Model.HideStreetNames = _modSettings.HideStreetNames;
+            TriggerUpdate( );
+        }
+
+        if ( _modSettings.HideAlleyNames != Model.HideAlleyNames )
+        {
+            Model.HideAlleyNames = _modSettings.HideAlleyNames;
+            TriggerUpdate( );
+        }
+
+        if ( _modSettings.HideBridgeNames != Model.HideBridgeNames )
+        {
+            Model.HideBridgeNames = _modSettings.HideBridgeNames;
+            TriggerUpdate( );
+        }
+
+        if ( _modSettings.HideDamNames != Model.HideDamNames )
+        {
+            Model.HideDamNames = _modSettings.HideDamNames;
             TriggerUpdate( );
         }
 
@@ -61,9 +82,27 @@ public class HighwayNameRemoverController : Controller<HighwayNameRemoverModel>
             _config.Save( );
         }
 
-        if (Model.HideRoadNames != _config.HideRoadNames)
+        if (Model.HideStreetNames != _config.HideStreetNames)
         {
-            _config.HideRoadNames = Model.HideRoadNames;
+            _config.HideStreetNames = Model.HideStreetNames;
+            _config.Save( );
+        }
+
+        if (Model.HideAlleyNames != _config.HideAlleyNames)
+        {
+            _config.HideAlleyNames = Model.HideAlleyNames;
+            _config.Save( );
+        }
+
+        if (Model.HideBridgeNames != _config.HideBridgeNames)
+        {
+            _config.HideBridgeNames = Model.HideBridgeNames;
+            _config.Save( );
+        }
+
+        if (Model.HideDamNames != _config.HideDamNames)
+        {
+            _config.HideDamNames = Model.HideDamNames;
             _config.Save( );
         }
     }

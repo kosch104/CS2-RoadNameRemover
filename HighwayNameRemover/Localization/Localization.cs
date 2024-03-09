@@ -45,8 +45,6 @@ namespace HighwayNameRemover
                 }
             }
 
-            Debug.Log("Hide Highway Names is " + HighwayNameRemoverController._config.HideHighwayNames);
-            Debug.Log("Hide Road Names is " + HighwayNameRemoverController._config.HideRoadNames);
             List<string> keys = new List<string>();
             foreach(string key in localeAsset.data.entries.Keys)
 			{
@@ -54,17 +52,15 @@ namespace HighwayNameRemover
 				{
 					if (key.Contains("Assets.HIGHWAY_NAME:"))
 					{
-						//localeAsset.data.entries[key] = "         ";
 						keys.Add(key);
 					}
 				}
 
-				if (HighwayNameRemoverController._config.HideRoadNames)
+				if (HighwayNameRemoverController._config.HideStreetNames)
 				{
 					string[] names = new string[] { "Assets.STREET_NAME:", "Assets.ALLEY_NAME:", "Assets.BRIDGE_NAME:", "Assets.DAM_NAME" };
 					if (Array.Exists(names, element => key.Contains(element)))
 					{
-						//localeAsset.data.entries[key] = "         ";
 						keys.Add(key);
 					}
 				}

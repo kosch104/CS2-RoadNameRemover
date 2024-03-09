@@ -11,10 +11,29 @@
             set;
         } = false;
 
-        public bool HideRoadNames
+        public bool HideStreetNames
         {
             get;
             set;
         } = false;
+
+
+        public bool HideAlleyNames
+        {
+            get;
+            set;
+        } = true;
+
+        public bool HideBridgeNames
+        {
+            get;
+            set;
+        } = true;
+
+        public bool HideDamNames
+        {
+            get;
+            set;
+        } = true;
     }
 }

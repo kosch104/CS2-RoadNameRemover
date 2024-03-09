@@ -13,7 +13,28 @@ public class HighwayNameRemoverSettings : GooeeSettings
     } = true;
 
     [SettingsUISection("Toggles")]
-    public bool HideRoadNames
+    public bool HideStreetNames
+    {
+        get;
+        set;
+    } = true;
+
+    [SettingsUISection("Toggles")]
+    public bool HideAlleyNames
+    {
+        get;
+        set;
+    } = true;
+
+    [SettingsUISection("Toggles")]
+    public bool HideBridgeNames
+    {
+        get;
+        set;
+    } = true;
+
+    [SettingsUISection("Toggles")]
+    public bool HideDamNames
     {
         get;
         set;
@@ -22,7 +43,10 @@ public class HighwayNameRemoverSettings : GooeeSettings
     public override void SetDefaults( )
     {
         HideHighwayNames = true;
-        HideRoadNames = false;
+        HideStreetNames = false;
+        HideAlleyNames = false;
+        HideBridgeNames = false;
+        HideDamNames = false;
     }
 
     protected override string UIResource => "HighwayNameRemover.Resources.settings.xml";

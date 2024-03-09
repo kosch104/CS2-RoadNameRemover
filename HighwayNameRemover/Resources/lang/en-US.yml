@@ -1,10 +1,19 @@
 lang:
  HighwayNameRemover.HighwayNameRemoverSettings.ModName: Highway Name Remover
- Options.SECTION[HighwayNameRemover.HighwayNameRemoverSettings]: Highway Name Remover
+ Options.SECTION[HighwayNameRemover.HighwayNameRemoverSettings]: Change the settings for the Highway Name Remover mod. Please note that a game restart is required for the changes to take effect.
  Options.GROUP[HighwayNameRemover.HighwayNameRemoverSettings.Toggles]: Highway Name Remover
- 
+
+ Options.OPTION[HighwayNameRemover.HighwayNameRemoverSettings.HighwayNameRemoverSettings.HideStreetNames]: Hide Street Names
+ Options.OPTION_DESCRIPTION[HighwayNameRemover.HighwayNameRemoverSettings.HighwayNameRemoverSettings.HideStreetNames]: When checked, street names will be hidden.
+
  Options.OPTION[HighwayNameRemover.HighwayNameRemoverSettings.HighwayNameRemoverSettings.HideHighwayNames]: Hide Highway Names
  Options.OPTION_DESCRIPTION[HighwayNameRemover.HighwayNameRemoverSettings.HighwayNameRemoverSettings.HideHighwayNames]: When checked, highway names will be hidden.
 
- Options.OPTION[HighwayNameRemover.HighwayNameRemoverSettings.HighwayNameRemoverSettings.HideRoadNames]: Hide Road Names
- Options.OPTION_DESCRIPTION[HighwayNameRemover.HighwayNameRemoverSettings.HighwayNameRemoverSettings.HodeRoadNames]: When checked, street, alley and damn names will be hidden.
+ Options.OPTION[HighwayNameRemover.HighwayNameRemoverSettings.HighwayNameRemoverSettings.HideAlleyNames]: Hide Alley Names
+ Options.OPTION_DESCRIPTION[HighwayNameRemover.HighwayNameRemoverSettings.HighwayNameRemoverSettings.HideAlleyNames]: When checked, alley names will be hidden.
+
+ Options.OPTION[HighwayNameRemover.HighwayNameRemoverSettings.HighwayNameRemoverSettings.HideBridgeNames]: Hide Bridge Names
+ Options.OPTION_DESCRIPTION[HighwayNameRemover.HighwayNameRemoverSettings.HighwayNameRemoverSettings.HideBridgeNames]: When checked, bridge names will be hidden.
+
+ Options.OPTION[HighwayNameRemover.HighwayNameRemoverSettings.HighwayNameRemoverSettings.HideDamNames]: Hide Dam Names
+ Options.OPTION_DESCRIPTION[HighwayNameRemover.HighwayNameRemoverSettings.HighwayNameRemoverSettings.HideDamNames]: When checked, dam names will be hidden.
