@@ -2,13 +2,16 @@
 
 Now works with Mod Managers!
 
-This mod removes display names from roads, highways, alleys, bridges and dams.
+This mod allows you to remove display names from roads, highways, alleys, bridges and dams.
 
 You can still change the name of a highway to a custom one, just the default values are invisible. If you want to remove a custom name, just remove all the text and hit Enter, it will then default back to the original (invisible) name.
+
+### Please use the mod settings to choose which types of road names to display.
 
 ## Dependencies
 
 - BepInEx 5
+- Gooee 0.0.7
 
 ## Installation
 

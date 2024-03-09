@@ -1,87 +1,40 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Reflection;
 using Colossal.IO.AssetDatabase;
-using Colossal.Json;
-using UnityEngine;
 
-namespace HighwayNameRemover
+namespace HighwayNameRemover.Localization
 {
 	public class Localization
 	{
-		internal static Dictionary<string, Dictionary<string, string>> localization;
-
 		internal static void AddCustomLocal(LocaleAsset localeAsset)
 		{
-			if(localization is null) LoadLocalization();
+            List<string> typesToRemove = new List<string>();
+			var cfg = HighwayNameRemoverController._config;
+			if (cfg.HideStreetNames)
+				typesToRemove.Add("Assets.STREET_NAME:");
+			if (cfg.HideHighwayNames)
+				typesToRemove.Add("Assets.HIGHWAY_NAME:");
+			if (cfg.HideAlleyNames)
+				typesToRemove.Add("Assets.ALLEY_NAME:");
+			if (cfg.HideBridgeNames)
+				typesToRemove.Add("Assets.BRIDGE_NAME:");
+			if (cfg.HideDamNames)
+				typesToRemove.Add("Assets.DAM_NAME:");
 
-			string loc = localeAsset.localeId;
 
-			if(!localization.ContainsKey(loc)) // Fallback language
-				loc = "en-US";
-
-            foreach(string key in localization[loc].Keys)
-            {
-                if(localeAsset.data.entries.ContainsKey(key))
-	                localeAsset.data.entries[key] = localization[loc][key];
-                else
-	                localeAsset.data.entries.Add(key, localization[loc][key]);
-
-                if(!key.Contains(":")) continue;
-
-                string[] parts = key.Split(":");
-                if (int.TryParse(parts[1], out int n))
-                {
-	                n++;
-	                if (localeAsset.data.indexCounts.ContainsKey(parts[0]))
-	                {
-		                if (localeAsset.data.indexCounts[parts[0]] != n) // Was <
-		                {
-			                localeAsset.data.indexCounts[parts[0]] = n;
-		                }
-	                }
-	                else localeAsset.data.indexCounts.Add(parts[0], n);
-                }
-            }
-		}
-
-		private static void LoadLocalization()
-		{
-			var assembly = Assembly.GetExecutingAssembly();
-			var resourceNames = assembly.GetManifestResourceNames();
-
-			Dictionary<string, Dictionary<string, string>> dictionary = new();
-			foreach (var resourceName in resourceNames)
+            List<string> keys = new List<string>();
+            foreach(string key in localeAsset.data.entries.Keys)
 			{
-				if (resourceName.EndsWith(".json") && resourceName.Contains(".embedded.Localization."))
+				if (Array.Exists(typesToRemove.ToArray(), element => key.Contains(element)))
 				{
-					using (Stream stream = assembly.GetManifestResourceStream(resourceName))
-					{
-						using (StreamReader reader = new StreamReader(stream))
-						{
-							string result = reader.ReadToEnd();
-							LocalizationLocaleJS loc = Decoder.Decode(result).Make<LocalizationLocaleJS>();
-							// Get the locale from the filename
-							var locale = resourceName.Split(".embedded.Localization.")[1].Split(".json")[0];
-							dictionary.Add(locale, loc.Localization);
-						}
-					}
+					keys.Add(key);
 				}
 			}
-			localization = dictionary;
+
+			foreach (string key in keys)
+			{
+				localeAsset.data.entries[key] = "         ";
+			}
 		}
-	}
-
-	[Serializable]
-	public class LocalizationLocaleJS
-	{	
-		public Dictionary<string, string> Localization;
-
-	}
-
-	public class LocalizationJS
-	{
-		public Dictionary<string, Dictionary<string, string>> Localization = [];
 	}
 }

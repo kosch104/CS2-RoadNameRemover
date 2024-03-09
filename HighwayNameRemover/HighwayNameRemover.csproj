@@ -20,7 +20,7 @@
 
 
 	<PropertyGroup>
-		<Cities2_Location>C:\Program Files (x86)\Steam\steamapps\common\Cities Skylines II</Cities2_Location>
+		<Cities2_Location>D:\Games\steamapps\common\Cities Skylines II</Cities2_Location>
 	</PropertyGroup>
 
 	<!--
@@ -28,10 +28,28 @@
 		above needs to be uncommented for this to work
 	-->
 	<ItemGroup>
+		<Reference Include="Gooee">
+			<HintPath>$(Cities2_Location)\BepInEx\plugins\Gooee\Gooee.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
 		<Reference Include="$(Cities2_Location)\Cities2_Data\Managed\Colossal.*.dll" Private="False" />
 		<Reference Include="$(Cities2_Location)\Cities2_Data\Managed\Game.dll" Private="False" />
 		<Reference Include="$(Cities2_Location)\Cities2_Data\Managed\Unity.*.dll" Private="False" />
-		<Reference Include="cohtml.Net"><HintPath>$(Cities2_Location)\Cities2_Data\Managed\cohtml.Net.dll</HintPath><Private>False</Private></Reference>
+		<Reference Include="cohtml.Net">
+			<HintPath>$(Cities2_Location)\Cities2_Data\Managed\cohtml.Net.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+
+		<Reference Include="Newtonsoft.Json">
+			<HintPath>$(Cities2_Location)\Cities2_Data\Managed\Newtonsoft.Json.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="Resources\lang\en-US.yml" />
+		<EmbeddedResource Include="Resources\settings.xml" />
+		<EmbeddedResource Include="Resources\ui.js" />
 	</ItemGroup>
 
 
