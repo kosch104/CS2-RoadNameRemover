@@ -1,3 +1,8 @@
+## v2.0.0
+- Add UI to choose which types of road names to display
+- Can be changed in the Cities Skylines 2 Settings Menu under the "Highway Name Remover" tab (Game restart required)
+- Further reduction of mod size
+
 ## v1.1.0
 - Restructure project
 - Reduce mod size

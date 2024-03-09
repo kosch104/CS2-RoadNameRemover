@@ -1,7 +1,7 @@
 {
   "name": "Highway_Name_Remover",
-  "version_number": "1.1.0",
+  "version_number": "2.0.0",
   "website_url": "https://github.com/kosch104/CS2-HighwayNameRemover",
-  "description": "Removes Display Names for all Streets and Highways",
-  "dependencies": [ "BepInEx-BepInExPack-5.4.2100" ]
+  "description": "Removes Display Names for all Streets and Highways. Can be configured to only remove certain types",
+  "dependencies": [ "BepInEx-BepInExPack-5.4.2100", "Cities2Modding-Gooee-0.0.7" ]
 }
