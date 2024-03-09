@@ -9,13 +9,14 @@ public class HighwayNameRemoverController : Controller<HighwayNameRemoverModel>
 {
     private HighwayNameRemoverSettings _modSettings;
     public static readonly HighwayNameRemoverConfig _config = ConfigBase.Load<HighwayNameRemoverConfig>( );
+    public static HighwayNameRemoverModel _model;
 
     public override HighwayNameRemoverModel Configure()
     {
-        var model = new HighwayNameRemoverModel( );
-        model.HideHighwayNames = _config.HideHighwayNames;
-        model.HideRoadNames = _config.HideRoadNames;
-        return new HighwayNameRemoverModel();
+        _model = new HighwayNameRemoverModel( );
+        _model.HideHighwayNames = _config.HideHighwayNames;
+        _model.HideRoadNames = _config.HideRoadNames;
+        return _model;
     }
 
     protected override void OnGameLoadingComplete(Purpose purpose, GameMode mode)
@@ -35,7 +36,7 @@ public class HighwayNameRemoverController : Controller<HighwayNameRemoverModel>
 
     private void UpdateFromSettings( )
     {
-        if ( Settings == null )
+        if ( _modSettings == null )
             return;
 
         if ( _modSettings.HideHighwayNames != Model.HideHighwayNames )
@@ -50,5 +51,25 @@ public class HighwayNameRemoverController : Controller<HighwayNameRemoverModel>
             TriggerUpdate( );
         }
 
+    }
+
+    protected override void OnModelUpdated()
+    {
+        if (Model.HideHighwayNames != _config.HideHighwayNames)
+        {
+            _config.HideHighwayNames = Model.HideHighwayNames;
+            _config.Save( );
+        }
+
+        if (Model.HideRoadNames != _config.HideRoadNames)
+        {
+            _config.HideRoadNames = Model.HideRoadNames;
+            _config.Save( );
+        }
+    }
+
+    protected override void OnSettingsUpdated( )
+    {
+        UpdateFromSettings( );
     }
 }
