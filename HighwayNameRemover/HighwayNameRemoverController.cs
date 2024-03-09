@@ -1,16 +1,20 @@
 ﻿using Colossal.Serialization.Entities;
 using Game;
 using Gooee.Plugins;
+using HighwayNameRemover.Configuration;
 
 namespace HighwayNameRemover;
 
 public class HighwayNameRemoverController : Controller<HighwayNameRemoverModel>
 {
-    public static HighwayNameRemoverSettings _modSettings;
+    private HighwayNameRemoverSettings _modSettings;
+    public static readonly HighwayNameRemoverConfig _config = ConfigBase.Load<HighwayNameRemoverConfig>( );
 
     public override HighwayNameRemoverModel Configure()
     {
         var model = new HighwayNameRemoverModel( );
+        model.HideHighwayNames = _config.HideHighwayNames;
+        model.HideRoadNames = _config.HideRoadNames;
         return new HighwayNameRemoverModel();
     }
 
