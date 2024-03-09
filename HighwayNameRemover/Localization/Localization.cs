@@ -4,50 +4,84 @@ using System.IO;
 using System.Reflection;
 using Colossal.IO.AssetDatabase;
 using Colossal.Json;
+using UnityEngine;
 
 namespace HighwayNameRemover
 {
 	public class Localization
 	{
-		internal delegate Dictionary<string, Dictionary<string, string>> OnLoadLocalization();
-		internal static OnLoadLocalization onLoadLocalization = LoadLocalization;
 		internal static Dictionary<string, Dictionary<string, string>> localization;
 
-		internal static void AddCustomLocal(LocaleAsset localeAsset) { //Dictionary<string, string>
+		internal static void AddCustomLocal(LocaleAsset localeAsset)
+		{
+			if(localization is null) LoadLocalization();
 
-			if(onLoadLocalization != null) foreach(Delegate @delegate in onLoadLocalization.GetInvocationList()) {
+			string loc = localeAsset.localeId;
 
-				object result = @delegate.DynamicInvoke();
+			if(!localization.ContainsKey(loc)) // Fallback language
+				loc = "en-US";
 
-				if(result is not Dictionary<string, Dictionary<string, string>> localization) return;
+            foreach(string key in localization[loc].Keys)
+            {
+                if(localeAsset.data.entries.ContainsKey(key))
+	                localeAsset.data.entries[key] = localization[loc][key];
+                else
+	                localeAsset.data.entries.Add(key, localization[loc][key]);
 
-				string loc = localeAsset.localeId;
+                if(!key.Contains(":")) continue;
 
-				if(!localization.ContainsKey(loc)) loc = "en-US";
+                string[] parts = key.Split(":");
+                if (int.TryParse(parts[1], out int n))
+                {
+	                n++;
+	                if (localeAsset.data.indexCounts.ContainsKey(parts[0]))
+	                {
+		                if (localeAsset.data.indexCounts[parts[0]] != n) // Was <
+		                {
+			                localeAsset.data.indexCounts[parts[0]] = n;
+		                }
+	                }
+	                else localeAsset.data.indexCounts.Add(parts[0], n);
+                }
+            }
+		}
 
-				foreach(string key in localization[loc].Keys) {
-					if(localeAsset.data.entries.ContainsKey(key)) localeAsset.data.entries[key] = localization[loc][key];
-					else localeAsset.data.entries.Add(key, localization[loc][key]);
+		private static void LoadLocalization()
+		{
+			var assembly = Assembly.GetExecutingAssembly();
+			var resourceNames = assembly.GetManifestResourceNames();
 
-					if(localeAsset.data.indexCounts.ContainsKey(key)) localeAsset.data.indexCounts[key] = localeAsset.data.indexCounts.Count;
-					else localeAsset.data.indexCounts.Add(key, localeAsset.data.indexCounts.Count);
+			Dictionary<string, Dictionary<string, string>> dictionary = new();
+			foreach (var resourceName in resourceNames)
+			{
+				if (resourceName.EndsWith(".json") && resourceName.Contains(".embedded.Localization."))
+				{
+					using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+					{
+						using (StreamReader reader = new StreamReader(stream))
+						{
+							string result = reader.ReadToEnd();
+							LocalizationLocaleJS loc = Decoder.Decode(result).Make<LocalizationLocaleJS>();
+							// Get the locale from the filename
+							var locale = resourceName.Split(".embedded.Localization.")[1].Split(".json")[0];
+							dictionary.Add(locale, loc.Localization);
+						}
+					}
 				}
 			}
+			localization = dictionary;
 		}
-
-		private static Dictionary<string, Dictionary<string, string>> LoadLocalization() {
-			//var localizationFile = Assembly.GetExecutingAssembly().GetManifestResourceStream("HighwayNameRemover.embedded.Localization.Localization.jsonc");
-			var localizationFile = Assembly.GetExecutingAssembly().GetManifestResourceStream($"{Assembly.GetExecutingAssembly().GetName().Name}.embedded.Localization.Localization.jsonc");
-			localization = Decoder.Decode(new StreamReader(localizationFile).ReadToEnd()).Make<LocalizationJS>().Localization;
-			return localization;
-		}
-
 	}
 
 	[Serializable]
-	public class LocalizationJS
+	public class LocalizationLocaleJS
 	{	
-		public Dictionary<string, Dictionary<string, string>> Localization = [];
+		public Dictionary<string, string> Localization;
 
+	}
+
+	public class LocalizationJS
+	{
+		public Dictionary<string, Dictionary<string, string>> Localization = [];
 	}
 }
