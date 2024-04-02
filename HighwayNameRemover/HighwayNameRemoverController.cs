@@ -5,7 +5,7 @@ using HighwayNameRemover.Configuration;
 
 namespace HighwayNameRemover;
 
-public class HighwayNameRemoverController : Controller<HighwayNameRemoverModel>
+public partial class HighwayNameRemoverController : Controller<HighwayNameRemoverModel>
 {
     private HighwayNameRemoverSettings _modSettings;
     public static readonly HighwayNameRemoverConfig _config = ConfigBase.Load<HighwayNameRemoverConfig>( );

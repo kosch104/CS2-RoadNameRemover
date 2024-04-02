@@ -1,94 +1,80 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>netstandard2.1</TargetFramework>
-		<Nullable>disable</Nullable>
-		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-		<ProduceReferenceAssembly>true</ProduceReferenceAssembly>
-		<LangVersion>latest</LangVersion>
-		<AssemblyVersion>2.0.0</AssemblyVersion>
-		<FileVersion>2.0.0</FileVersion>
-		<Version>2.0.0</Version>
-		<RootNamespace>HighwayNameRemover</RootNamespace>
-		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
-		<RestoreAdditionalProjectSources>
-			https://api.nuget.org/v3/index.json;
-			https://nuget.bepinex.dev/v3/index.json;
-			https://nuget.samboy.dev/v3/index.json
-		</RestoreAdditionalProjectSources>
+		<OutputType>Library</OutputType>
+		<TargetFramework>net472</TargetFramework>
+		<Configurations>Debug;Release</Configurations>
+		<langVersion>latest</langVersion>
+
+		<!--The folder where Game.dll is located. Set it only if the game is not installed in the default location, otherwise keep it empty-->
+		<CustomManagedPath>D:\Games\steamapps\common\Cities Skylines II\Cities2_Data\Managed</CustomManagedPath>
+
+		<AdditionalFilesDirectory>Resources</AdditionalFilesDirectory>
+
+		<!--Path to the text file where PDX account data is stored which is required to publish the mod-->
+		<!--Keep it outside of project in order to not commit it or share accidentally-->
+		<!--The file should contain 2 lines:-->
+		<!--Your.PDX@Account.login-->
+		<!--Your-PDX-Account-Pa$$word-->
+		<PDXAccountDataPath>$(USERPROFILE)\Desktop\pdx_account.txt</PDXAccountDataPath>
+
+		<!--The file where mod information which is required for publishing mod on PDX mods are stored-->
+		<PublishConfigurationPath>Properties\PublishConfiguration.xml</PublishConfigurationPath>
 	</PropertyGroup>
 
+	<!--Imports must be after PropertyGroup block-->
+	<Import Project="$([System.Environment]::GetEnvironmentVariable('CSII_TOOLPATH', 'EnvironmentVariableTarget.User'))\Mod.props" />
+	<Import Project="$([System.Environment]::GetEnvironmentVariable('CSII_TOOLPATH', 'EnvironmentVariableTarget.User'))\Mod.targets" />
 
-	<PropertyGroup>
-		<Cities2_Location>D:\Games\steamapps\common\Cities Skylines II</Cities2_Location>
-	</PropertyGroup>
-
-	<!--
-		This is all the references to the DLLs directly from your game directory. The Cities2_Location property
-		above needs to be uncommented for this to work
-	-->
 	<ItemGroup>
-		<Reference Include="Gooee">
-			<HintPath>$(Cities2_Location)\BepInEx\plugins\Gooee\Gooee.dll</HintPath>
-			<Private>False</Private>
+		<Reference Include="$(CustomManagedPath)\Colossal.*.dll" Private="False" />
+		<Reference Include="$(CustomManagedPath)\Game*.dll" Private="False" />
+		<Reference Include="$(CustomManagedPath)\Unity.*.dll" Private="False" />
+		<Reference Include="$(CustomManagedPath)\cohtml.Net.dll" Private="False" />
+		<Reference Include="$(LocalModsPath)\Gooee\Gooee.dll" Private="False" />
+		<!--<Reference Include="$(LocalModsPath)\I18NEverywhere\I18NEverywhere.dll" Private="False" />-->
+		<!--<Reference Include="$(UserDataPath)\.cache\Mods\mods_subscribed\75724_*\ExtraLib.dll" Private="False" />-->
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Lib.Harmony" Version="2.2.2" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="UnityEngine.Modules" Version="2022.3.7" IncludeAssets="compile" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Update="System">
+			<Private>false</Private>
 		</Reference>
-		<Reference Include="$(Cities2_Location)\Cities2_Data\Managed\Colossal.*.dll" Private="False" />
-		<Reference Include="$(Cities2_Location)\Cities2_Data\Managed\Game.dll" Private="False" />
-		<Reference Include="$(Cities2_Location)\Cities2_Data\Managed\Unity.*.dll" Private="False" />
-		<Reference Include="cohtml.Net">
-			<HintPath>$(Cities2_Location)\Cities2_Data\Managed\cohtml.Net.dll</HintPath>
-			<Private>False</Private>
+		<Reference Update="System.Core">
+			<Private>false</Private>
 		</Reference>
-
-		<Reference Include="Newtonsoft.Json">
-			<HintPath>$(Cities2_Location)\Cities2_Data\Managed\Newtonsoft.Json.dll</HintPath>
-			<Private>False</Private>
+		<Reference Update="System.Data">
+			<Private>false</Private>
 		</Reference>
 	</ItemGroup>
 
 	<ItemGroup>
-		<EmbeddedResource Include="Resources\lang\en-US.yml" />
-		<EmbeddedResource Include="Resources\settings.xml" />
-		<EmbeddedResource Include="Resources\ui.js" />
+		<None Include="$(ModPropsFile)" Link="Properties\Mod.props" />
+		<None Include="$(ModTargetsFile)" Link="Properties\Mod.targets" />
 	</ItemGroup>
 
-
-	<!-- Set the default value for BepInExVersion -->
-	<PropertyGroup>
-		<BepInExVersion Condition="'$(BepInExVersion)' == ''">5</BepInExVersion>
-	</PropertyGroup>
-
-	<!--
-		These ItemGroups and PropertyGroups gives you compatibility with both BepInEx 5 and 6.
-		Mainly for the purposes of being able to distribute your mods on Thunderstore, and
-		making it easy to upgrade in the future to proper versions.
-	-->
-	<ItemGroup>
-		<PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
-		<PackageReference Include="HarmonyX" Version="2.*" />
-		<PackageReference Include="UnityEngine.Modules" Version="2022.3.7" IncludeNetwork="compile" />
-	</ItemGroup>
-
-	<ItemGroup Condition="'$(BepInExVersion)' == '6'">
-		<PackageReference Include="BepInEx.Unity.Mono" Version="6.0.0-be.*" />
-	</ItemGroup>
-
-	<ItemGroup Condition="'$(BepInExVersion)' == '5'">
-		<PackageReference Include="BepInEx.Core" Version="5.*" IncludeAssets="compile" />
-	</ItemGroup>
-
-	<PropertyGroup Condition="'$(BepInExVersion)' == '6'">
-		<DefineConstants>$(DefineConstants);BEPINEX_V6</DefineConstants>
-	</PropertyGroup>
-
-	<ItemGroup>
-		<EmbeddedResource Include="embedded\Localization\*"></EmbeddedResource>
-	</ItemGroup>
-
-
-	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
-	  <Exec Command="if not exist &quot; $(Cities2_Location)\BepInEx\plugins\$(ProjectName)&quot; mkdir &quot;$(Cities2_Location)\BepInEx\plugins\$(ProjectName)&quot;&#xA;&#xA;					copy /Y &quot;$(TargetDir)0Harmony.dll&quot; &quot;$(Cities2_Location)\BepInEx\plugins\$(ProjectName)\0Harmony.dll&quot;&#xA;&#xA;					copy /Y &quot;$(TargetDir)$(ProjectName).dll&quot; &quot;$(Cities2_Location)\BepInEx\plugins\$(ProjectName)\$(ProjectName).dll&quot;" />
+	<Target Name="BuildUI" BeforeTargets="AfterBuild">
+		<Exec Command="npm run build" WorkingDirectory="$(ProjectDir)/UI" />
 	</Target>
-	
-	<ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
+
+	<Target Name="GetAdditionalFiles" AfterTargets="DeployWIP">
+		<ItemGroup>
+			<AdditionalFilesToDeploy Include="$(AdditionalFilesDirectory)\**\*.*" />
+		</ItemGroup>
+		<Copy SourceFiles="@(AdditionalFilesToDeploy)" DestinationFiles="@(AdditionalFilesToDeploy->'$(DeployDir)\%(RecursiveDir)%(Filename)%(Extension)')" />
+	</Target>
+
+	<Target Name="CopyUIFiles" AfterTargets="DeployWIP">
+		<ItemGroup>
+			<UIFiles Include="bin\UI\**\*.*" />
+		</ItemGroup>
+		<Copy SourceFiles="@(UIFiles)" DestinationFiles="@(UIFiles->'$(DeployDir)\%(RecursiveDir)%(Filename)%(Extension)')" />
+	</Target>
+
 </Project>
