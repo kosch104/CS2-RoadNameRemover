@@ -3,6 +3,7 @@ using HarmonyLib;
 using Colossal.Localization;
 using Colossal.IO.AssetDatabase;
 using HighwayNameRemover.Localization;
+using UnityEngine;
 
 namespace HighwayNameRemover.Patches
 {
@@ -11,6 +12,7 @@ namespace HighwayNameRemover.Patches
     {
         static void Prefix(LocaleAsset asset)
         {
+            Debug.Log("Prefixing AddLocale");
             Localization.Localization.AddCustomLocal(asset);
         }
     }
