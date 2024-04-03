@@ -1,20 +1,20 @@
 ﻿using Colossal.Serialization.Entities;
 using Game;
 using Gooee.Plugins;
-using HighwayNameRemover.Configuration;
+using RoadNameRemover.Configuration;
 using UnityEngine.SocialPlatforms;
 
-namespace HighwayNameRemover;
+namespace RoadNameRemover;
 
-public partial class HighwayNameRemoverController : Controller<HighwayNameRemoverModel>
+public partial class RoadNameRemoverController : Controller<RoadNameRemoverModel>
 {
-    private HighwayNameRemoverSettings _modSettings;
-    public static readonly HighwayNameRemoverConfig _config = ConfigBase.Load<HighwayNameRemoverConfig>( );
-    public static HighwayNameRemoverModel _model;
+    private RoadNameRemoverSettings _modSettings;
+    public static readonly RoadNameRemoverConfig _config = ConfigBase.Load<RoadNameRemoverConfig>( );
+    public static RoadNameRemoverModel _model;
 
-    public override HighwayNameRemoverModel Configure()
+    public override RoadNameRemoverModel Configure()
     {
-        _model = new HighwayNameRemoverModel( );
+        _model = new RoadNameRemoverModel( );
         _model.HideHighwayNames = _config.HideHighwayNames;
         _model.HideStreetNames = _config.HideStreetNames;
         _model.HideAlleyNames = _config.HideAlleyNames;
@@ -29,9 +29,9 @@ public partial class HighwayNameRemoverController : Controller<HighwayNameRemove
 
         if (mode == GameMode.Game)
         {
-            var plugin = Plugin as HighwayNameRemoverPlugin;
+            var plugin = Plugin as RoadNameRemoverPlugin;
 
-            if (plugin.Settings is HighwayNameRemoverSettings settings)
+            if (plugin.Settings is RoadNameRemoverSettings settings)
                 _modSettings = settings;
 
             UpdateFromSettings();

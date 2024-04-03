@@ -1,17 +1,13 @@
-using System;
-using System.Collections.Generic;
-using Colossal.IO.AssetDatabase;
 using Colossal.Localization;
 using Game.SceneFlow;
-using UnityEngine;
 
-namespace HighwayNameRemover
+namespace RoadNameRemover
 {
 	public class Localization
 	{
 		public static bool Prefix(string entryID, ref string value, ref bool __result, LocalizationDictionary __instance)
 		{
-			var cfg = HighwayNameRemoverController._config;
+			var cfg = RoadNameRemoverController._config;
 			if (entryID.StartsWith("Assets.STREET_NAME:") && cfg.HideStreetNames)
 			{
 				value = "          ";

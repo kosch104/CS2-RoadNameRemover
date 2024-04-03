@@ -4,14 +4,14 @@ using System.IO;
 using System.Reflection;
 using UnityEngine;
 
-namespace HighwayNameRemover.Configuration
+namespace RoadNameRemover.Configuration
 {
     /// <summary>
     /// Abstract base class for configuration handling.
     /// </summary>
     public abstract class ConfigBase
     {
-        public static readonly string MOD_PATH = Path.Combine( Application.persistentDataPath, "Mods", "HighwayNameRemover" );
+        public static readonly string MOD_PATH = Path.Combine( Application.persistentDataPath, "Mods", "RoadNameRemover" );
 
         static readonly JsonSerializerSettings _serializerSettings = new JsonSerializerSettings
         {

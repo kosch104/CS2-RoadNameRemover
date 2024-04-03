@@ -1,9 +1,9 @@
 ﻿using Game.Settings;
 using Gooee;
 
-namespace HighwayNameRemover;
+namespace RoadNameRemover;
 
-public class HighwayNameRemoverSettings : GooeeSettings
+public class RoadNameRemoverSettings : GooeeSettings
 {
     [SettingsUISection("Toggles")]
     public bool HideHighwayNames
@@ -49,6 +49,6 @@ public class HighwayNameRemoverSettings : GooeeSettings
         HideDamNames = false;
     }
 
-    protected override string UIResource => "HighwayNameRemover.Resources.settings.xml";
+    protected override string UIResource => "RoadNameRemover.Resources.settings.xml";
 
 }

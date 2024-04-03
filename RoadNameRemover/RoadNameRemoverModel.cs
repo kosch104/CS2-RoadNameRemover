@@ -1,8 +1,8 @@
 ﻿using Gooee.Plugins;
 
-namespace HighwayNameRemover;
+namespace RoadNameRemover;
 
-public class HighwayNameRemoverModel : Model
+public class RoadNameRemoverModel : Model
 {
     public bool HideHighwayNames
     {

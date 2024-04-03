@@ -7,11 +7,11 @@ using Game.Modding;
 using Game.SceneFlow;
 
 
-namespace HighwayNameRemover
+namespace RoadNameRemover
 {
     public class Mod : IMod
     {
-        internal static readonly ILog log = LogManager.GetLogger($"{nameof(HighwayNameRemover)}").SetShowsErrorsInUI(false);
+        internal static readonly ILog log = LogManager.GetLogger($"{nameof(RoadNameRemover)}").SetShowsErrorsInUI(false);
 
         private Harmony harmony;
 
@@ -19,12 +19,12 @@ namespace HighwayNameRemover
         {
             if (!GameManager.instance.modManager.TryGetExecutableAsset(this, out var asset)) return;
 
-            harmony = new($"{nameof(HighwayNameRemover)}.{nameof(Mod)}");
+            harmony = new($"{nameof(RoadNameRemover)}.{nameof(Mod)}");
 
             var originalMethod = typeof(LocalizationDictionary).GetMethod("TryGetValue", BindingFlags.Public | BindingFlags.Instance);
             var prefix = typeof(Localization).GetMethod("Prefix", BindingFlags.Public | BindingFlags.Static);
             harmony.Patch(originalMethod, new HarmonyMethod(prefix));
-            log.Info("HighwayNameRemover patched LocalizationDictionary.TryGetValue");
+            log.Info("RoadNameRemover patched LocalizationDictionary.TryGetValue");
             GameManager.instance.localizationManager.ReloadActiveLocale();
         }
 

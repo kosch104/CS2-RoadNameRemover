@@ -1,6 +1,6 @@
-﻿namespace HighwayNameRemover.Configuration
+﻿namespace RoadNameRemover.Configuration
 {
-    public class HighwayNameRemoverConfig : ConfigBase
+    public class RoadNameRemoverConfig : ConfigBase
     {
         protected override string ConfigFileName => "config.json";
 

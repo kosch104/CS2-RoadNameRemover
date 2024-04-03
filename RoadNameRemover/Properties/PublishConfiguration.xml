@@ -1,8 +1,8 @@
 ﻿<Publish>
 	<!--Id must be set in order to update existed mod. it is not required for publishing mod for the first time-->
-	<ModId Value="77175" />
+	<ModId Value="" />
 	<!--Name of the mod to display to players-->
-	<DisplayName Value="Extra Networks and Areas" />
+	<DisplayName Value="Road Name Remover" />
 	<!--Short description of the mod-->
 	<ShortDescription Value="This mod adds Invisible Roads, Custom Park Areas and Integrated Stops directly into the Game UI" />
 	<!--Long description of the mod. Single line or multi line. Supports minimal markdown subset-->
@@ -53,9 +53,6 @@ Many people helped me in the creation of this mod. Especially I would like to th
 	<Screenshot Value="Properties/Thumbnail500.png" />
 	<Screenshot Value="Properties/image1.png" />
 	<Screenshot Value="Properties/image2.png" />
-	<Screenshot Value="Properties/image3.png" />
-	<Screenshot Value="Properties/image4.png" />
-	<Screenshot Value="Properties/image5.png" />
 	<!--Tag, can be set multiple times-->
 	<Tag Value="Code Mod" />
 	<!--Link to the forum post where the mod can be discussed-->
@@ -66,7 +63,6 @@ Many people helped me in the creation of this mod. Especially I would like to th
 	<GameVersion Value="1.1.*" />
 	<!--Dependency for the mod, can be set multiple times-->
 	<Dependency Id="75724" /> <!-- Extra Lib -->
-	<Dependency Id="75426" /> <!-- l18n Everywhere -->
 	<Dependency Id="75426" /> <!-- l18n Everywhere -->
 	<!-- <Dependency Id="74417" /> Unified Icon Library -->
 	<!-- <Dependency Id="75250" /> Better Bulldozer -->
@@ -82,6 +78,6 @@ Added translations for:
 - Polish (by **karmel68**)
 	</ChangeLog>
 	<!--External link. supported types are discord, github, youtube, twitch, x, paypal, patreon-->
-	<ExternalLink Type="github" Url="https://github.com/kosch104/HighwayNameRemover" />
+	<ExternalLink Type="github" Url="https://github.com/kosch104/RoadNameRemover" />
 	<ExternalLink Type="discord" Url="https://discord.gg/vd7HXnpPJf" />
 </Publish>
