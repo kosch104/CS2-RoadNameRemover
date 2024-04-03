@@ -65,6 +65,10 @@
 		<EmbeddedResource Include="Resources\lang\en-US.yml" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Localization\" />
+	</ItemGroup>
+
 	<Target Name="BuildUI" BeforeTargets="AfterBuild">
 		<Exec Command="npm run build" WorkingDirectory="$(ProjectDir)/UI" />
 	</Target>

@@ -2,6 +2,7 @@
 using Game;
 using Gooee.Plugins;
 using HighwayNameRemover.Configuration;
+using UnityEngine.SocialPlatforms;
 
 namespace HighwayNameRemover;
 
@@ -46,30 +47,35 @@ public partial class HighwayNameRemoverController : Controller<HighwayNameRemove
         {
             Model.HideHighwayNames = _modSettings.HideHighwayNames;
             TriggerUpdate( );
+            Localization.ReloadLocaleBySwitching();
         }
 
         if ( _modSettings.HideStreetNames != Model.HideStreetNames )
         {
             Model.HideStreetNames = _modSettings.HideStreetNames;
             TriggerUpdate( );
+            Localization.ReloadLocaleBySwitching();
         }
 
         if ( _modSettings.HideAlleyNames != Model.HideAlleyNames )
         {
             Model.HideAlleyNames = _modSettings.HideAlleyNames;
             TriggerUpdate( );
+            Localization.ReloadLocaleBySwitching();
         }
 
         if ( _modSettings.HideBridgeNames != Model.HideBridgeNames )
         {
             Model.HideBridgeNames = _modSettings.HideBridgeNames;
             TriggerUpdate( );
+            Localization.ReloadLocaleBySwitching();
         }
 
         if ( _modSettings.HideDamNames != Model.HideDamNames )
         {
             Model.HideDamNames = _modSettings.HideDamNames;
             TriggerUpdate( );
+            Localization.ReloadLocaleBySwitching();
         }
 
     }

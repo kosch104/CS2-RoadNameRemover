@@ -1,7 +1,7 @@
 lang:
  HighwayNameRemover.HighwayNameRemoverSettings.ModName: Highway Name Remover
  Options.SECTION[HighwayNameRemover.HighwayNameRemoverSettings]: Highway Name Remover
- Options.GROUP[HighwayNameRemover.HighwayNameRemoverSettings.Toggles]: Change the settings for the Highway Name Remover mod. Please note that a game restart is required for the changes to take effect.
+ Options.GROUP[HighwayNameRemover.HighwayNameRemoverSettings.Toggles]: Change the settings for the Highway Name Remover mod. Please change the language after changing any option to reload the changes.
 
  Options.OPTION[HighwayNameRemover.HighwayNameRemoverSettings.HighwayNameRemoverSettings.HideStreetNames]: Hide Street Names
  Options.OPTION_DESCRIPTION[HighwayNameRemover.HighwayNameRemoverSettings.HighwayNameRemoverSettings.HideStreetNames]: When checked, street names will be hidden.
