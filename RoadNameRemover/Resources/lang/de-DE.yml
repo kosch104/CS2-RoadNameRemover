@@ -1,0 +1,19 @@
+lang:
+ RoadNameRemover.RoadNameRemoverSettings.ModName: Road Name Remover
+ Options.SECTION[RoadNameRemover.RoadNameRemoverSettings]: Road Name Remover
+ Options.GROUP[RoadNameRemover.RoadNameRemoverSettings.Toggles]: Ändere die Einstellungen der Road Name Remover Mod. Bitte ändere die Sprache nach dem Ändern einer Option, um die Änderungen zu übernehmen.
+
+ Options.OPTION[RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideStreetNames]: Straßennamen ausblenden
+ Options.OPTION_DESCRIPTION[RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideStreetNames]: Wenn aktiviert, werden Straßennamen ausgeblendet.
+
+ Options.OPTION[RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideHighwayNames]: Autobahn-Namen ausblenden
+ Options.OPTION_DESCRIPTION[RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideHighwayNames]: Wenn aktiviert, werden Autobahn-Namen ausgeblendet.
+
+ Options.OPTION[RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideAlleyNames]: Gassen-Namen ausblenden
+ Options.OPTION_DESCRIPTION[RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideAlleyNames]: Wenn aktiviert, werden Gassen-Namen ausgeblendet.
+
+ Options.OPTION[RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideBridgeNames]: Brücken-Namen ausblenden
+ Options.OPTION_DESCRIPTION[RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideBridgeNames]: Wenn aktiviert, werden Brücken-Namen ausgeblendet.
+
+ Options.OPTION[RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideDamNames]: Damm-Namen ausblenden
+ Options.OPTION_DESCRIPTION[RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideDamNames]: Wenn aktiviert, werden Damm-Namen ausgeblendet.

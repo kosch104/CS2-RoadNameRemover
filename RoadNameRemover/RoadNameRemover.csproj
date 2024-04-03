@@ -60,6 +60,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<EmbeddedResource Include="Resources\lang\de-DE.yml" />
 		<EmbeddedResource Include="Resources\settings.xml" />
 		<EmbeddedResource Include="Resources\ui.js" />
 		<EmbeddedResource Include="Resources\lang\en-US.yml" />

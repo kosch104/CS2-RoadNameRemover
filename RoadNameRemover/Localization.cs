@@ -1,5 +1,4 @@
 using Colossal.Localization;
-using Game.SceneFlow;
 
 namespace RoadNameRemover
 {
@@ -43,15 +42,7 @@ namespace RoadNameRemover
 
 		internal static void ReloadLocaleBySwitching()
 		{
-			var localeId = GameManager.instance.localizationManager.activeLocaleId;
-			// Switch to another locale and back to reload the active locale
-			var altLocaleId = localeId == "en-US" ? "de-DE" : "en-US";
-			GameManager.instance.localizationManager.SetActiveLocale(altLocaleId);
-			Mod.log.Info("Loaded locale: " + altLocaleId);
-			GameManager.instance.localizationManager.ReloadActiveLocale();
-			//GameManager.instance.localizationManager.SetActiveLocale(localeId);
-			//GameManager.instance.localizationManager.ReloadActiveLocale();
-			Mod.log.Info("Reloaded active locale: " + localeId);
+			// Currently unused
 		}
 	}
 }

@@ -1,4 +1,4 @@
-# Highway Name Remover
+# Road Name Remover
 
 Now works with Mod Managers!
 
