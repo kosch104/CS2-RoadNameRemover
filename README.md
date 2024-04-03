@@ -1,32 +1,23 @@
 # Road Name Remover
+This mod provides options to remove names from Streets, Highways, Alleys, Bridges and Dams. It sets the default values for these roads to an empty value. It is still possible to manually name roads.
 
-Now works with Mod Managers!
+Per default only Highway Names are hidden. Use the ingame settings to change this. Make sure to reload the language (by switching to another language and back) to see the changes without having to restart the game.
 
-This mod allows you to remove display names from roads, highways, alleys, bridges and dams.
+## Features
+- Configurable ingame options for each road type
+- Lightweight, highly compatible
+- Road names will return to original values when the mod is disabled
 
-You can still change the name of a highway to a custom one, just the default values are invisible. If you want to remove a custom name, just remove all the text and hit Enter, it will then default back to the original (invisible) name.
-
-### Please use the mod settings to choose which types of road names to display.
-
-## Dependencies
-
-- BepInEx 5
-- Gooee 0.0.7
-
-## Installation
-
-This mod can easily be installed using r2modman or Thunderstore Mod Manager. If you want to install it manually, follow these steps:
-
-1. Make sure BepInEx 5 is installed
-2. Download the file
-3. Extract the `HighwayNameRemover.zip` file into the `BepInEx\plugins` folder
+## Requirements
+- Gooee
+- l18N Everywhere (for localization)
 
 ## Compatibility
-- This mod is not compatible with other mods replacing the localization files (I currently don't know any mods that do)
+This mod should be compatible with most other mods. Conflict potential with I18N Everywhere is currently being investigated.
 
-## Further Notes
-- This mod works for all languages
-- [Changelog](https://github.com/kosch104/CS2-HighwayNameRemover/blob/main/CHANGELOG.md)
+## Acknowledgment
+I would like to thank
+* **CityRat** for the mod thumbnail and **Nullpinter** for their knowledge on localization. This mods remake has been inspired by I18N Everywhere.
 
-
-
+## Community
+Looking to discuss Cities: Skylines 2 Unofficial modding together with other modders? You're welcome to join [Cities 2 Modding Discord](https://discord.gg/vd7HXnpPJf) or the [Cities: Skylines Modding Discord](https://discord.gg/27CVdGFA47).
