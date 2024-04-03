@@ -26,6 +26,7 @@ namespace HighwayNameRemover
             {
                 log.Info($"Patched method: {patchedMethod.Module.Name}:{patchedMethod.Name}");
             }
+
         }
 
         public void OnDispose()

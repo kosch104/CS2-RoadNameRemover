@@ -9,7 +9,6 @@ namespace HighwayNameRemover.Localization
 	{
 		internal static void AddCustomLocal(LocaleAsset localeAsset)
 		{
-			Debug.Log("Adding custom localization");
             List<string> typesToRemove = new List<string>();
 			var cfg = HighwayNameRemoverController._config;
 			if (cfg.HideStreetNames)
@@ -35,7 +34,6 @@ namespace HighwayNameRemover.Localization
 
 			foreach (string key in keys)
 			{
-				Debug.Log("Key replaced");
 				localeAsset.data.entries[key] = "         ";
 			}
 		}
