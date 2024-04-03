@@ -1,4 +1,4 @@
-# Road Name Remover
+# [Road Name Remover](https://mods.paradoxplaza.com/mods/77463/Windows)
 This mod provides options to remove names from Streets, Highways, Alleys, Bridges and Dams. It sets the default values for these roads to an empty value. It is still possible to manually name roads.
 
 Per default only Highway Names are hidden. Use the ingame settings to change this. Make sure to reload the language (by switching to another language and back) to see the changes without having to restart the game.
@@ -10,7 +10,6 @@ Per default only Highway Names are hidden. Use the ingame settings to change thi
 
 ## Requirements
 - Gooee
-- l18N Everywhere (for localization)
 
 ## Compatibility
 This mod should be compatible with most other mods. Conflict potential with I18N Everywhere is currently being investigated.
