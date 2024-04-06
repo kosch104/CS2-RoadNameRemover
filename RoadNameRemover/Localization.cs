@@ -6,7 +6,7 @@ namespace RoadNameRemover
 	{
 		public static bool Prefix(string entryID, ref string value, ref bool __result, LocalizationDictionary __instance)
 		{
-			var cfg = RoadNameRemoverController._config;
+			var cfg = Setting.instance;
 			if (entryID.StartsWith("Assets.STREET_NAME:") && cfg.HideStreetNames)
 			{
 				value = "          ";
