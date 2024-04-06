@@ -19,7 +19,7 @@ Per default only Highway Names are hidden. Use the ingame settings to change thi
 - Road names will return to original values when the mod is disabled
 
 ## Requirements
-- Gooee
+- None!
 
 ## Compatibility
 This mod should be compatible with most other mods. Conflict potential with I18N Everywhere is currently being investigated.
@@ -38,16 +38,19 @@ I would like to thank
 	<!--Link to the forum post where the mod can be discussed-->
 	<ForumLink Value="https://forum.paradoxplaza.com/forum/threads/road-name-remover.1657394/" />
 	<!--Version of the mod-->
-	<ModVersion Value="3.0.0" />
+	<ModVersion Value="3.1.0" />
 	<!--Recommended version of the base game to use the mod-->
 	<GameVersion Value="1.1.*" />
 	<!--Dependency for the mod, can be set multiple times-->
-	<Dependency Id="77225" /> <!-- Gooee -->
+	<Dependency Id="" />
 
 	<!--Change log for new version. Single line or multi line. Supports minimal markdown subset-->
 	<!--<ChangeLog Value="" />-->
 	<ChangeLog>
-		Initial Port to PDX Mods
+- Now directly uses settings from the game
+- Removed dependencies
+- Removed localization due to project restructure (this will be added back in the near future)
+- Significant load time improvement and mod size reduction
 	</ChangeLog>
 	<!--External link. supported types are discord, github, youtube, twitch, x, paypal, patreon-->
 	<ExternalLink Type="github" Url="https://github.com/kosch104/RoadNameRemover" />

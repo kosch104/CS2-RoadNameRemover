@@ -23,12 +23,12 @@ namespace RoadNameRemover
             harmony = new($"{nameof(RoadNameRemover)}.{nameof(Mod)}");
 
 
-            var m_Setting = new Setting(this);
-            m_Setting.RegisterInOptionsUI();
-            GameManager.instance.localizationManager.AddSource("en-US", new LocaleEN(m_Setting));
-            AssetDatabase.global.LoadSettings(nameof(RoadNameRemover), m_Setting, new Setting(this));
-            m_Setting.Apply();
-            Setting.instance = m_Setting;
+            var mSetting = new Setting(this);
+            mSetting.RegisterInOptionsUI();
+            GameManager.instance.localizationManager.AddSource("en-US", new LocaleEN());
+            AssetDatabase.global.LoadSettings(nameof(RoadNameRemover), mSetting, new Setting(this));
+            mSetting.Apply();
+            Setting.instance = mSetting;
 
 
             var originalMethod = typeof(LocalizationDictionary).GetMethod("TryGetValue", BindingFlags.Public | BindingFlags.Instance);

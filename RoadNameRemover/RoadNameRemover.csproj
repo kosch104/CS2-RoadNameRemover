@@ -61,14 +61,8 @@
 
 	<ItemGroup>
 		<EmbeddedResource Include="Resources\lang\de-DE.yml" />
-		<EmbeddedResource Include="Resources\settings.xml" />
-		<EmbeddedResource Include="Resources\ui.js" />
 		<EmbeddedResource Include="Resources\lang\en-US.yml" />
 	</ItemGroup>
-
-	<Target Name="BuildUI" BeforeTargets="AfterBuild">
-		<Exec Command="npm run build" WorkingDirectory="$(ProjectDir)/UI" />
-	</Target>
 
 	<Target Name="GetAdditionalFiles" AfterTargets="DeployWIP">
 		<ItemGroup>
