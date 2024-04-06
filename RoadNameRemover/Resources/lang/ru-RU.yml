@@ -1,0 +1,19 @@
+lang:
+ RoadNameRemover.RoadNameRemoverSettings.ModName: Road Name Remover
+ Options.SECTION[RoadNameRemover.RoadNameRemoverSettings]: Road Name Remover
+ Options.GROUP[RoadNameRemover.RoadNameRemoverSettings.Toggles]: Измените настройки мода для удаления названий дорог. Пожалуйста, измените язык после изменения любого параметра, чтобы перезагрузить изменения
+
+ Options.OPTION[RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideStreetNames]: Скрыть названия улиц
+ Options.OPTION_DESCRIPTION[RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideStreetNames]: Если этот флажок установлен, названия улиц будут скрыты.
+
+ Options.OPTION[RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideHighwayNames]: Скраыть названия шоссе
+ Options.OPTION_DESCRIPTION[RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideHighwayNames]: Если этот флажок установлен, названия шоссе будут скрыты.
+
+ Options.OPTION[RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideAlleyNames]: Скрыть названия переулков
+ Options.OPTION_DESCRIPTION[RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideAlleyNames]: Если этот флажок установлен, названия переулков будут скрыты.
+
+ Options.OPTION[RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideBridgeNames]: Скрыть названия мостов
+ Options.OPTION_DESCRIPTION[RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideBridgeNames]: Если этот флажок установлен, названия мостов будут скрыты.
+
+ Options.OPTION[RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideDamNames]: Скрыть названия дамб и плотин
+ Options.OPTION_DESCRIPTION[RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideDamNames]: Если этот флажок установлен, названия дамб и плотин будут скрыты.
