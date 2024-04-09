@@ -1,19 +1,25 @@
-lang:
- RoadNameRemover.RoadNameRemoverSettings.ModName: Road Name Remover
- Options.SECTION[RoadNameRemover.RoadNameRemoverSettings]: Road Name Remover
- Options.GROUP[RoadNameRemover.RoadNameRemoverSettings.Toggles]: Change the settings for the Road Name Remover mod. Please change the language after changing any option to reload the changes.
-
- Options.OPTION[RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideStreetNames]: Hide Street Names
- Options.OPTION_DESCRIPTION[RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideStreetNames]: When checked, street names will be hidden.
-
- Options.OPTION[RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideHighwayNames]: Hide Highway Names
- Options.OPTION_DESCRIPTION[RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideHighwayNames]: When checked, highway names will be hidden.
-
- Options.OPTION[RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideAlleyNames]: Hide Alley Names
- Options.OPTION_DESCRIPTION[RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideAlleyNames]: When checked, alley names will be hidden.
-
- Options.OPTION[RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideBridgeNames]: Hide Bridge Names
- Options.OPTION_DESCRIPTION[RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideBridgeNames]: When checked, bridge names will be hidden.
-
- Options.OPTION[RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideDamNames]: Hide Dam Names
- Options.OPTION_DESCRIPTION[RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideDamNames]: When checked, dam names will be hidden.
+{
+ "RoadNameRemover.RoadNameRemoverSettings.ModName": "Road Name Remover1",
+ "Options": {
+  "SECTION": {
+   "RoadNameRemover.RoadNameRemoverSettings": "Road Name Remover2"
+  },
+  "GROUP": {
+   "RoadNameRemover.RoadNameRemover.Slider": "Change the settings for the Road Name Remover mod. Please change the language after changing any option to reload the changes."
+  },
+  "OPTION": {
+   "RoadNameRemover.RoadNameRemoverSettings.Mod.Setting.HideStreetNames": "Hide Street Names",
+   "RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideHighwayNames": "Hide Highway Names",
+   "RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideAlleyNames": "Hide Alley Names",
+   "RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideBridgeNames": "Hide Bridge Names",
+   "RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideDamNames": "Hide Dam Names"
+  },
+  "OPTION_DESCRIPTION": {
+   "RoadNameRemover.RoadNameRemoverSettings.Mod.Setting.HideStreetNames": "When checked, street names will be hidden.",
+   "RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideHighwayNames": "When checked, highway names will be hidden.",
+   "RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideAlleyNames": "When checked, alley names will be hidden.",
+   "RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideBridgeNames": "When checked, bridge names will be hidden.",
+   "RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideDamNames": "When checked, dam names will be hidden."
+  }
+ }
+}

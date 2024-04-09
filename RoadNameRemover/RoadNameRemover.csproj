@@ -59,11 +59,6 @@
 		<None Include="$(ModTargetsFile)" Link="Properties\Mod.targets" />
 	</ItemGroup>
 
-	<ItemGroup>
-		<EmbeddedResource Include="Resources\lang\de-DE.yml" />
-		<EmbeddedResource Include="Resources\lang\en-US.yml" />
-	</ItemGroup>
-
 	<Target Name="GetAdditionalFiles" AfterTargets="DeployWIP">
 		<ItemGroup>
 			<AdditionalFilesToDeploy Include="$(AdditionalFilesDirectory)\**\*.*" />

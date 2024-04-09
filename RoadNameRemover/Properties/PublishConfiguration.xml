@@ -38,7 +38,7 @@ I would like to thank
 	<!--Link to the forum post where the mod can be discussed-->
 	<ForumLink Value="https://forum.paradoxplaza.com/forum/threads/road-name-remover.1657394/" />
 	<!--Version of the mod-->
-	<ModVersion Value="3.1.0" />
+	<ModVersion Value="3.1.1" />
 	<!--Recommended version of the base game to use the mod-->
 	<GameVersion Value="1.1.*" />
 	<!--Dependency for the mod, can be set multiple times-->
@@ -47,12 +47,10 @@ I would like to thank
 	<!--Change log for new version. Single line or multi line. Supports minimal markdown subset-->
 	<!--<ChangeLog Value="" />-->
 	<ChangeLog>
-- Now directly uses settings from the game
-- Removed dependencies
-- Removed localization due to project restructure (this will be added back in the near future)
-- Significant load time improvement and mod size reduction
+- Potential Fix for Error Logs and Missing translations
 	</ChangeLog>
 	<!--External link. supported types are discord, github, youtube, twitch, x, paypal, patreon-->
-	<ExternalLink Type="github" Url="https://github.com/kosch104/RoadNameRemover" />
+	<ExternalLink Type="github" Url="https://github.com/kosch104/CS2-RoadNameRemover" />
 	<ExternalLink Type="discord" Url="https://discord.gg/vd7HXnpPJf" />
+	<ExternalLink Type="paypal" Url="https://www.paypal.com/paypalme/KonstantinSchwarze" />
 </Publish>
