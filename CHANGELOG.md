@@ -1,3 +1,15 @@
+## v3.1.1
+Potential fix for error logs and missing translations
+
+## v3.1.0
+- Now directly uses settings from the game
+- Removed dependencies
+- Removed localization due to project restructure (this will be added back in the near future)
+- Significant load time improvement and mod size reduction
+
+## v3.0.0
+Initial Paradox Release
+
 ## v2.0.0
 - Add UI to choose which types of road names to display
 - Can be changed in the Cities Skylines 2 Settings Menu under the "Highway Name Remover" tab (Game restart required)
