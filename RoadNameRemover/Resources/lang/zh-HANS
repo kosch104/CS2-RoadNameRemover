@@ -1,0 +1,25 @@
+{
+ "RoadNameRemover.RoadNameRemoverSettings.ModName": "道路名去除1",
+ "Options": {
+  "SECTION": {
+   "RoadNameRemover.RoadNameRemoverSettings": "道路名去除2"
+  },
+  "GROUP": {
+   "RoadNameRemover.RoadNameRemover.Slider": "改变道路名去除mod的设置。请在更改设置之后，改变游戏语言以加载改动。"
+  },
+  "OPTION": {
+   "RoadNameRemover.RoadNameRemoverSettings.Mod.Setting.HideStreetNames": "隐藏街道名",
+   "RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideHighwayNames": "隐藏公路名",
+   "RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideAlleyNames": "隐藏小巷名",
+   "RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideBridgeNames": "隐藏桥梁名",
+   "RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideDamNames": "隐藏水坝名"
+  },
+  "OPTION_DESCRIPTION": {
+   "RoadNameRemover.RoadNameRemoverSettings.Mod.Setting.HideStreetNames": "勾选后，城市街道的名称将被隐藏。",
+   "RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideHighwayNames": "勾选后，公路的名称将被隐藏。",
+   "RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideAlleyNames": "勾选后，小巷的名称将被隐藏。",
+   "RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideBridgeNames": "勾选后，桥梁的名称将被隐藏。",
+   "RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideDamNames": "勾选后，水电站大坝的道路名称将被隐藏。"
+  }
+ }
+}
