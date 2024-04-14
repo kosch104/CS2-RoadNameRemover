@@ -11,16 +11,14 @@ using UnityEngine;
 namespace RoadNameRemover
 {
     [FileLocation(nameof(RoadNameRemover))]
-    [SettingsUIGroupOrder(kSliderGroup, kDropdownGroup)]
-    [SettingsUIShowGroupName(kSliderGroup, kDropdownGroup)]
+    [SettingsUIGroupOrder(kToggleGroup, kToggleGroup)]
+    [SettingsUIShowGroupName(kToggleGroup)]
     public class Setting : ModSetting
     {
         private readonly Mod _mod;
         public const string kSection = "Main";
-        public const string kSection2 = "Time";
-        public const string kButtonGroup = "Button";
-        public const string kDropdownGroup = "Dropdown";
-        public const string kSliderGroup = "Slider";
+
+        public const string kToggleGroup = "Toggle";
         public static Setting instance;
 
         public Setting(IMod mod) : base(mod)
@@ -31,21 +29,16 @@ namespace RoadNameRemover
 
         //Page1 - General Settings
 
-        [SettingsUISection(kSection, kSliderGroup)]
+        [SettingsUISection(kSection, kToggleGroup)]
         public bool HideStreetNames { get; set; }
-        [SettingsUISection(kSection, kSliderGroup)]
+        [SettingsUISection(kSection, kToggleGroup)]
         public bool HideHighwayNames { get; set; }
-        [SettingsUISection(kSection, kSliderGroup)]
+        [SettingsUISection(kSection, kToggleGroup)]
         public bool HideAlleyNames { get; set; }
-        [SettingsUISection(kSection, kSliderGroup)]
+        [SettingsUISection(kSection, kToggleGroup)]
         public bool HideBridgeNames { get; set; }
-        [SettingsUISection(kSection, kSliderGroup)]
+        [SettingsUISection(kSection, kToggleGroup)]
         public bool HideDamNames { get; set; }
-
-        public override void Apply()
-        {
-            //Mod.log.Info("Applying Settings");
-        }
 
         public override void SetDefaults()
         {
@@ -60,40 +53,34 @@ namespace RoadNameRemover
 
     public class LocaleEN : IDictionarySource
     {
-        public IEnumerable<KeyValuePair<string, string>> ReadEntries(IList<IDictionaryEntryError> errors, Dictionary<string, int> indexCounts)
+        private readonly Setting m_Setting;
+
+        public LocaleEN(Setting setting)
         {
-            var setting = Setting.instance;
+            m_Setting = setting;
+        }
 
-            Dictionary<string, string> dict;
-            try
+        public IEnumerable<KeyValuePair<string, string>> ReadEntries(IList<IDictionaryEntryError> errors,
+            Dictionary<string, int> indexCounts)
+        {
+            return new Dictionary<string, string>
             {
-                dict = new Dictionary<string, string>
+                { m_Setting.GetSettingsLocaleID(), "Road Name Remover" },
                 {
-                    { setting.GetSettingsLocaleID(), "Road Name Remover" },
-                    { setting.GetOptionGroupLocaleID(Setting.kButtonGroup), "Buttons" },
-                    {
-                        setting.GetOptionGroupLocaleID(Setting.kSliderGroup),
-                        "Change the settings for the Road Name Remover mod. Please change the language after changing any option to reload the changes."
-                    },
-
-                    { setting.GetOptionLabelLocaleID(nameof(Setting.HideStreetNames)), "Hide Street Names" },
-                    { setting.GetOptionDescLocaleID(nameof(Setting.HideStreetNames)), "Hide the names of streets" },
-                    { setting.GetOptionLabelLocaleID(nameof(Setting.HideHighwayNames)), "Hide Highway Names" },
-                    { setting.GetOptionDescLocaleID(nameof(Setting.HideHighwayNames)), "Hide the names of highways" },
-                    { setting.GetOptionLabelLocaleID(nameof(Setting.HideAlleyNames)), "Hide Alley Names" },
-                    { setting.GetOptionDescLocaleID(nameof(Setting.HideAlleyNames)), "Hide the names of alleys" },
-                    { setting.GetOptionLabelLocaleID(nameof(Setting.HideBridgeNames)), "Hide Bridge Names" },
-                    { setting.GetOptionDescLocaleID(nameof(Setting.HideBridgeNames)), "Hide the names of bridges" },
-                    { setting.GetOptionLabelLocaleID(nameof(Setting.HideDamNames)), "Hide Dam Names" },
-                    { setting.GetOptionDescLocaleID(nameof(Setting.HideDamNames)), "Hide the names of dams" },
-                };
-            }
-            catch (Exception x)
-            {
-                Mod.log.Warn("Using Fallback Localization");
-                dict = new Dictionary<string, string>();
-            }
-            return dict;
+                    m_Setting.GetOptionGroupLocaleID(Setting.kToggleGroup),
+                    "Change the settings for the Road Name Remover mod. Please change the language after changing any option to reload the changes."
+                },
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.HideStreetNames)), "Hide Street Names" },
+                { m_Setting.GetOptionDescLocaleID(nameof(Setting.HideStreetNames)), "Hide the names of streets" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.HideHighwayNames)), "Hide Highway Names" },
+                { m_Setting.GetOptionDescLocaleID(nameof(Setting.HideHighwayNames)), "Hide the names of highways" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.HideAlleyNames)), "Hide Alley Names" },
+                { m_Setting.GetOptionDescLocaleID(nameof(Setting.HideAlleyNames)), "Hide the names of alleys" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.HideBridgeNames)), "Hide Bridge Names" },
+                { m_Setting.GetOptionDescLocaleID(nameof(Setting.HideBridgeNames)), "Hide the names of bridges" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.HideDamNames)), "Hide Dam Names" },
+                { m_Setting.GetOptionDescLocaleID(nameof(Setting.HideDamNames)), "Hide the names of dams" },
+            };
         }
 
         public void Unload()

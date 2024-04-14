@@ -9,10 +9,10 @@ Per default only Highway Names are hidden. Use the ingame settings to change thi
 - Road names will return to original values when the mod is disabled
 
 ## Requirements
-- Gooee
+- None!
 
 ## Compatibility
-This mod should be compatible with most other mods. Conflict potential with I18N Everywhere is currently being investigated.
+This mod should be compatible with most other mods
 
 ## Acknowledgment
 I would like to thank

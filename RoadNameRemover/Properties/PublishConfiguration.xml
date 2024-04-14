@@ -22,7 +22,7 @@ Per default only Highway Names are hidden. Use the ingame settings to change thi
 - None!
 
 ## Compatibility
-This mod should be compatible with most other mods. Conflict potential with I18N Everywhere is currently being investigated.
+This mod should be compatible with most other mods.
 
 ## Acknowledgment
 I would like to thank
@@ -38,7 +38,7 @@ I would like to thank
 	<!--Link to the forum post where the mod can be discussed-->
 	<ForumLink Value="https://forum.paradoxplaza.com/forum/threads/road-name-remover.1657394/" />
 	<!--Version of the mod-->
-	<ModVersion Value="3.1.1" />
+	<ModVersion Value="3.1.2" />
 	<!--Recommended version of the base game to use the mod-->
 	<GameVersion Value="1.1.*" />
 	<!--Dependency for the mod, can be set multiple times-->
@@ -47,7 +47,7 @@ I would like to thank
 	<!--Change log for new version. Single line or multi line. Supports minimal markdown subset-->
 	<!--<ChangeLog Value="" />-->
 	<ChangeLog>
-- Potential fix for error logs and missing translations
+- Minor fixes and code size reduction
 	</ChangeLog>
 	<!--External link. supported types are discord, github, youtube, twitch, x, paypal, patreon-->
 	<ExternalLink Type="github" Url="https://github.com/kosch104/CS2-RoadNameRemover" />
