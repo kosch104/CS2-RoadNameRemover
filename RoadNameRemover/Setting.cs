@@ -24,10 +24,14 @@ namespace RoadNameRemover
         public Setting(IMod mod) : base(mod)
         {
             _mod = (Mod)mod;
+            SetDefaults();
             //Mod.log.Info("Setting initialized");
         }
 
         //Page1 - General Settings
+
+        [SettingsUIHidden]
+        public bool HiddenSetting { get; set; }
 
         [SettingsUISection(kSection, kToggleGroup)]
         public bool HideStreetNames { get; set; }
@@ -42,12 +46,13 @@ namespace RoadNameRemover
 
         public override void SetDefaults()
         {
+            HiddenSetting = true;
             HideStreetNames = false;
             HideHighwayNames = true;
             HideAlleyNames = false;
             HideBridgeNames = false;
             HideDamNames = false;
-            Mod.log.Info("Settings set to default");
+            //Mod.log.Info("Settings set to default");
         }
     }
 

@@ -1,3 +1,6 @@
+## Version 3.1.3
+- Fix settings not being saved correctly
+
 ## Version 3.1.2
 - Minor fixes and code size reduction
 

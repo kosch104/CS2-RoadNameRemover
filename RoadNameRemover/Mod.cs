@@ -27,7 +27,7 @@ namespace RoadNameRemover
             mSetting.RegisterInOptionsUI();
             GameManager.instance.localizationManager.AddSource("en-US", new LocaleEN(mSetting));
             AssetDatabase.global.LoadSettings(nameof(RoadNameRemover), mSetting, new Setting(this));
-            mSetting.Apply();
+            mSetting.HiddenSetting = false;
             Setting.instance = mSetting;
 
 
