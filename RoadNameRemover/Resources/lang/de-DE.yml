@@ -17,3 +17,6 @@ lang:
 
  Options.OPTION[RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideDamNames]: Damm-Namen ausblenden
  Options.OPTION_DESCRIPTION[RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideDamNames]: Wenn aktiviert, werden Damm-Namen ausgeblendet.
+
+ Options.OPTION[RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideDistrictNames]: Bezirks-Namen ausblenden
+ Options.OPTION_DESCRIPTION[RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideDistrictNames]: Wenn aktiviert, werden Bezirks-Namen ausgeblendet.

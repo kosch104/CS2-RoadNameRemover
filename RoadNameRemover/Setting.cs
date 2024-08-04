@@ -29,10 +29,6 @@ namespace RoadNameRemover
         }
 
         //Page1 - General Settings
-
-        [SettingsUIHidden]
-        public bool HiddenSetting { get; set; }
-
         [SettingsUISection(kSection, kToggleGroup)]
         public bool HideStreetNames { get; set; }
         [SettingsUISection(kSection, kToggleGroup)]
@@ -43,15 +39,17 @@ namespace RoadNameRemover
         public bool HideBridgeNames { get; set; }
         [SettingsUISection(kSection, kToggleGroup)]
         public bool HideDamNames { get; set; }
+        [SettingsUISection(kSection, kToggleGroup)]
+        public bool HideDistrictNames { get; set; }
 
         public override void SetDefaults()
         {
-            HiddenSetting = true;
             HideStreetNames = false;
             HideHighwayNames = true;
             HideAlleyNames = false;
             HideBridgeNames = false;
             HideDamNames = false;
+            HideDistrictNames = false;
             //Mod.log.Info("Settings set to default");
         }
     }
@@ -85,6 +83,8 @@ namespace RoadNameRemover
                 { m_Setting.GetOptionDescLocaleID(nameof(Setting.HideBridgeNames)), "Hide the names of bridges" },
                 { m_Setting.GetOptionLabelLocaleID(nameof(Setting.HideDamNames)), "Hide Dam Names" },
                 { m_Setting.GetOptionDescLocaleID(nameof(Setting.HideDamNames)), "Hide the names of dams" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.HideDistrictNames)), "Hide District Names" },
+                { m_Setting.GetOptionDescLocaleID(nameof(Setting.HideDistrictNames)), "Hide the names of districts" },
             };
         }
 

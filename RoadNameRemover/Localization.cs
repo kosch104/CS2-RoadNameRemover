@@ -37,6 +37,12 @@ namespace RoadNameRemover
 				__result = true;
 				return false;
 			}
+			if (entryID.StartsWith("Assets.DISTRICT_NAME:") && cfg.HideDistrictNames)
+			{
+				value = "          ";
+				__result = true;
+				return false;
+			}
 			return true;
 		}
 

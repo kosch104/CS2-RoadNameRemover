@@ -12,7 +12,7 @@
    "RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideHighwayNames": "Hide Highway Names",
    "RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideAlleyNames": "Hide Alley Names",
    "RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideBridgeNames": "Hide Bridge Names",
-   "RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideDamNames": "Hide Dam Names"
+   "RoadNameRemover.RoadNameRemoverSettings.RoadNameRemoverSettings.HideDamNames": "Hide Dam Names",
   },
   "OPTION_DESCRIPTION": {
    "RoadNameRemover.RoadNameRemoverSettings.Mod.Setting.HideStreetNames": "When checked, street names will be hidden.",
