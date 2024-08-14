@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace RoadNameRemover
 {
-    [FileLocation(nameof(RoadNameRemover))]
+    [FileLocation($"ModsSettings/{nameof(RoadNameRemover)}/{nameof(RoadNameRemover)}")]
     [SettingsUIGroupOrder(kToggleGroup, kToggleGroup)]
     [SettingsUIShowGroupName(kToggleGroup)]
     public class Setting : ModSetting
